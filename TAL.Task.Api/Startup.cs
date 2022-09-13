@@ -38,6 +38,7 @@ namespace TAL.Task.Api
                     "AllowSpecificOrigin",
                     builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
+            services.AddScoped<IPremiumCalculatorService, PremiumCalculator>();
             services.AddScoped<IOccupationService, OccupationService>();
             services.AddScoped<ISampleDbContext, SampleDbContext>();
             services.AddScoped<IRatingRepository, RatingRepository>();
