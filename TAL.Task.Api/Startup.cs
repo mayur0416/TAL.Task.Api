@@ -32,6 +32,12 @@ namespace TAL.Task.Api
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    "AllowSpecificOrigin",
+                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
             services.AddScoped<IOccupationService, OccupationService>();
             services.AddScoped<ISampleDbContext, SampleDbContext>();
             services.AddScoped<IRatingRepository, RatingRepository>();
@@ -50,7 +56,7 @@ namespace TAL.Task.Api
             app.UseSwagger();
             app.UseSwaggerUI(c => {c.SwaggerEndpoint("/swagger/v1/swagger.json", "TAL Test Api");});
             app.UseRouting();
-
+            app.UseCors("AllowSpecificOrigin");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
