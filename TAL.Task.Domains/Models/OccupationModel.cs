@@ -1,10 +1,11 @@
-﻿namespace TAL.Task.Domains.Entities
+﻿namespace TAL.Task.Domains.Models
 {
-    public class Occupation
+    public class OccupationModel
     {
         public int OccupationId { get; set; }
+
         public string Name { get; set; }
+
         public int RatingId { get; set; }
-        public virtual Rating Rating { get; }
     }
 }

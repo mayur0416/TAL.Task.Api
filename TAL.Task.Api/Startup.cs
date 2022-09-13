@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TAL.Task.Api.Services;
 using TAL.Task.Repositories.Data;
 using TAL.Task.Repositories.Repositories;
 
@@ -28,6 +30,8 @@ namespace TAL.Task.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IOccupationService, OccupationService>();
             services.AddScoped<ISampleDbContext, SampleDbContext>();
             services.AddScoped<IRatingRepository, RatingRepository>();
             services.AddScoped<IOccupationRepository, OccupationRepository>();

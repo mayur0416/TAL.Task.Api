@@ -5,13 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TAL.Task.Domains\TAL.Task.Domains.csproj" />
-    <ProjectReference Include="..\TAL.Task.Repositories\TAL.Task.Repositories.csproj" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\TAL.Task.Domains\TAL.Task.Domains.csproj" />
+    <ProjectReference Include="..\TAL.Task.Repositories\TAL.Task.Repositories.csproj" />
   </ItemGroup>
 
 

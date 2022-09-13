@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using TAL.Task.Domains.Entities;
 
 namespace TAL.Task.Repositories.Data

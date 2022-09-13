@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TAL.Task.Domains.Entities
+﻿namespace TAL.Task.Domains.Entities
 {
     public class Rating
     {
