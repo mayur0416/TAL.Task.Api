@@ -18,7 +18,7 @@ namespace TAL.Task.Api.Services
         }
         public double CalulatePremium(PremiumCalculatorModel premiumCalculatorModel)
         {
-            var ratingFactor = _ratingRepository.GetRatingFactor(premiumCalculatorModel.RatingId);
+            var ratingFactor = _ratingRepository.GetRatingFactor(premiumCalculatorModel.Occupation.RatingId);
             return ((premiumCalculatorModel.SumInsured * ratingFactor * premiumCalculatorModel.Age) / (1000 * 12));
         }
     }
