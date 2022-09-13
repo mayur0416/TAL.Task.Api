@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TAL.Task.Repositories.Data;
+using TAL.Task.Repositories.Repositories;
 
 namespace TAL.Task.Api
 {
@@ -26,6 +28,9 @@ namespace TAL.Task.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ISampleDbContext, SampleDbContext>();
+            services.AddScoped<IRatingRepository, RatingRepository>();
+            services.AddScoped<IOccupationRepository, OccupationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
